@@ -356,7 +356,7 @@ footer a:hover{color:var(--accent)}
     <div class="sec-label" style="justify-content:center">04 — Contact</div>
     <h2>Building something that <em>matters</em>? So are we.</h2>
     <p>We work with select partners, operators, and investors who share our conviction that the hardest problems are worth solving properly. Reach out.</p>
-    <form class="cform" id="cform" action="https://formspree.io/f/https://formspree.io/f/xgoqrbaq" method="POST">
+    <form class="cform" id="cform" action="https://formspree.io/f/xgoqrbaq" method="POST">
       <div class="frow">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
@@ -401,7 +401,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 /* ---------- contact form ---------- */
 (function(){
   const f=document.getElementById('cform'),msg=document.getElementById('fmsg');
-  const configured=!f.action.includes('https://formspree.io/f/xgoqrbaq');
+  const configured=f.action.includes('formspree.io/f/')&&!f.action.includes('YOUR_FORM_ID');
   f.addEventListener('submit',async(e)=>{
     e.preventDefault();
     if(!configured){
